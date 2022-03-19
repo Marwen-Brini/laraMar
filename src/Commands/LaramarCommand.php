@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace laraMar\Laramar\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaramarCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laramar';
 
     public $description = 'My command';
 
