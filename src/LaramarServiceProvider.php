@@ -2,9 +2,9 @@
 
 namespace laraMar\Laramar;
 
+use laraMar\Laramar\Commands\LaramarCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use laraMar\Laramar\Commands\LaramarCommand;
 
 class LaramarServiceProvider extends PackageServiceProvider
 {
