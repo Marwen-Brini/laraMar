@@ -10,7 +10,8 @@ class MyModel extends Model
     use HasFactory;
     public $guarded = [];
 
-    public function getUppercaseName():string{
+    public function getUppercaseName(): string
+    {
         return ucfirst($this->name) ;
     }
 }
