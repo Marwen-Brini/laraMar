@@ -19,7 +19,7 @@ class LaramarServiceProvider extends PackageServiceProvider
             ->name('laramar')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laramar_table')
+            ->hasMigrations(['create_my_models_table','create_my_customs_table'])
             ->hasCommand(LaramarCommand::class);
     }
 }

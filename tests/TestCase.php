@@ -5,6 +5,8 @@ namespace laraMar\Laramar\Tests;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use laraMar\Laramar\LaramarServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Illuminate\Support\Facades\Schema;
+
 
 class TestCase extends Orchestra
 {
@@ -26,11 +28,19 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
+       /* config()->set('database.default', 'testing');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_laramar_table.php.stub';
-        $migration->up();
-        */
+        $migrations = [include __DIR__.'/../database/migrations/create_my_models_table.php.stub',include __DIR__.'/../database/migrations/create_my_customs_table.php.stub'];
+        foreach ($migrations as $migration){
+            $migration->up();
+        }*/
+        Schema::dropIfExists('my_models');
+        Schema::dropIfExists('my_customs');
+        $migrations = [include __DIR__.'/../database/migrations/create_my_models_table.php.stub',include __DIR__.'/../database/migrations/create_my_customs_table.php.stub'];
+        foreach ($migrations as $migration){
+            $migration->up();
+        }
+
+
     }
 }

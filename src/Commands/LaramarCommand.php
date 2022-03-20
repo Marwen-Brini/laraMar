@@ -6,13 +6,14 @@ use Illuminate\Console\Command;
 
 class LaramarCommand extends Command
 {
-    public $signature = 'laramar';
+    public $signature = 'report:me';
 
     public $description = 'My command';
 
     public function handle(): int
     {
-        $this->comment('All done');
+        $text = config('laramar.command_output');
+        $this->comment($text);
 
         return self::SUCCESS;
     }
